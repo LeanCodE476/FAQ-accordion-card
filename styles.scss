@@ -22,15 +22,7 @@ body{
 }
 
 
-@keyframes slider{
-    0%{
-        position: absolute ;
-    }
-    100%{
-       opacity: 1 ;
-    position: relative ;
-   }
-}
+
 @keyframes rotate {
     0%{
     transform:rotate(0deg);
@@ -41,11 +33,10 @@ body{
 }
 .active{
    position: relative !important;
-   animation: slider 2s;
    opacity: 1 !important;
 }
 .img-rotate{
-    animation: rotate .2s;
+    animation: rotate .5s;
     transform: rotate(181deg);
 }
 .text-bold{
@@ -99,22 +90,25 @@ box-shadow: -5px 2px 21px 14px rgba(0, 0, 0, 0.22);
          padding-bottom: 1rem;
 
              .container-accordeon{
-                border-bottom: 2px solid $color-light-grayish-blue;
-                min-width: 30rem;
-                position: relative;
-                padding-bottom: 1rem;
-                .container-title{
-                    padding: 1.6rem 0;
+                 border-bottom: 2px solid $color-light-grayish-blue;
+                 min-width: 30rem;
+                 position: relative;
+                 padding-bottom: 1rem;
+                 .container-title{
+                    // background-color: red;
+
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    background-color: white;
+                    // background-color: white;
                     z-index: 999;
                    position: relative;
                     cursor: pointer;
 
                     .title-quest {
                             font-size: 1.8rem;
+                    padding:1.6rem 1.6rem 1.6rem 0;
+                    width: 100%;
                             &:hover{
                                 transition: color .1s;
                                 color: $color-soft-red;
@@ -122,6 +116,8 @@ box-shadow: -5px 2px 21px 14px rgba(0, 0, 0, 0.22);
                         }            
                         img {
                             height: 1rem;
+                            position: absolute;
+                            right: 1vh;
                         }
                 }
                 .text-answer{
