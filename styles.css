@@ -61,6 +61,9 @@ main {
   grid-template-areas: "contL contR";
   grid-template-columns: 1fr 1fr;
   position: relative;
+  box-shadow: -5px 2px 21px 14px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: -5px 2px 21px 14px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: -5px 2px 21px 14px rgba(0, 0, 0, 0.22);
 }
 main .container-left {
   background-image: url(images/bg-pattern-desktop.svg);
