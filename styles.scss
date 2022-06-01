@@ -1,0 +1,195 @@
+$color-very-dark-desaturated-blue: hsl(238, 29%, 16%);
+$color-soft-red: hsl(14, 88%, 65%);
+$color-soft-violet: #af67e9;
+$color-soft-blue: #6565e7;
+$font-family: 'Kumbh Sans',sans-serif;
+$color-light-grayish-blue: hsl(240, 5%, 91%);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-family: $font-family;
+    background: linear-gradient(0deg, rgba(101, 101, 231, 1) 14%, rgba(175, 103, 233, 1) 85%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(101, 101, 231);
+}
+
+
+@keyframes slider{
+    0%{
+        position: absolute ;
+    }
+    100%{
+       opacity: 1 ;
+    position: relative ;
+   }
+}
+@keyframes rotate {
+    0%{
+    transform:rotate(0deg);
+    }
+    100%{
+    transform: rotate(181deg);
+    }
+}
+.active{
+   position: relative !important;
+   animation: slider 2s;
+   opacity: 1 !important;
+}
+.img-rotate{
+    animation: rotate .2s;
+    transform: rotate(181deg);
+}
+.text-bold{
+    font-weight: 600 !important;
+    &:hover{
+        color: black !important;
+    }
+}
+main{
+    border-radius: 2rem;
+    margin: 15rem auto;
+    width: 70%;
+    height: auto;
+    background-color: white;
+    display: grid;
+    grid-template-areas: "contL contR";
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    .container-left{
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 190%;
+        background-position: 130% 65%;
+        grid-area: contL;
+        overflow: hidden;
+        border-radius: 2rem 0rem 0rem 2rem;
+        .img-girl{
+            margin: 5rem 0 0 -7rem;
+        }
+        .img-box{
+            left: -9.3rem;
+            top: 18rem;
+            position: absolute;
+
+        }
+        .woman-mobile {
+                     display: none;
+                 }
+    }
+    .container-right{
+        grid-area: contR;
+         margin: 5rem 7rem 5rem 0rem;
+         h1{
+            font-size: 3.5rem;
+         }
+         .container-quest{
+             margin-top: 1rem;
+         padding-bottom: 1rem;
+
+             .container-accordeon{
+                border-bottom: 2px solid $color-light-grayish-blue;
+                min-width: 30rem;
+                position: relative;
+                padding-bottom: 1rem;
+                .container-title{
+                    padding: 1.6rem 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: white;
+                    z-index: 999;
+                   position: relative;
+                    cursor: pointer;
+
+                    .title-quest {
+                            font-size: 1.8rem;
+                            &:hover{
+                                transition: color .1s;
+                                color: $color-soft-red;
+                            }
+                        }            
+                        img {
+                            height: 1rem;
+                        }
+                }
+                .text-answer{
+                    opacity: 0;
+                    top: 0rem;
+                    font-size: 1.5rem;
+                    position: absolute;
+                    color: $color-very-dark-desaturated-blue;
+
+
+                }
+             }
+         }
+    }
+}
+
+@media screen and (max-width: 75rem) {
+ 
+    main {
+            margin: 20rem auto; 
+            width: 90%; 
+            grid-template-areas:
+             "contL"
+             "contR"
+             ; 
+            grid-template-columns: 1fr; 
+    
+            .container-left {
+                min-height: 25rem; 
+                background-image: url(images/bg-pattern-mobile.svg); 
+                background-size: 90%; 
+                background-position: 10% 25%; 
+                overflow:visible; 
+                border-radius: 2rem 0rem 0rem 2rem;
+    
+                .img-girl {
+                    margin: 5rem 0 0 -7rem; 
+                    display: none; 
+                }
+    
+                .img-box {
+                    display: none; 
+    
+                }
+                .woman-mobile{
+                    width: 25rem; 
+                    display: block; 
+                    margin: -10rem auto; 
+                }
+            }
+    
+            .container-right {
+                margin: 3rem; 
+    
+                h1 {
+                    text-align: center; 
+                    font-size: 3.5rem; 
+                }
+    
+                .container-quest {
+                    margin-top: 1rem; 
+    
+                    .container-accordeon {
+    
+                        min-width: 10rem; 
+           
+    
+            
+    
+                    }
+                }
+            }
+        }
+}
